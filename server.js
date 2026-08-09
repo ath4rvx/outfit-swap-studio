@@ -102,3 +102,6 @@ function isDataImage(value) {
 app.listen(port, "0.0.0.0", () => {
   console.log(`Outfit Swap Studio listening on port ${port}`);
 });
+app.use(express.static(path.join(__dirname, "public")));app.get("/", (_req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
